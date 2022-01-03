@@ -64,3 +64,13 @@ class ManimCreator(Scene):
         self.play(Write(manimObjective))
         self.play(Write(manimOSpecifics))
         self.play(Write(threeBlue))
+
+class Thanks(Scene):
+    def construct(self):
+        thanks = Text('Obrigado!', font_size = 30)
+        
+        doubts = Text('Dúvidas?', font_size = 15).next_to(thanks, DOWN)
+
+        
+        self.play(Write(thanks))
+        self.play(Write(doubts))
