@@ -32,3 +32,18 @@ class GroupScene(Scene):
         self.play(Write(tetzTitle))
         self.play(Write(manarinTitle))
         self.play(Write(pedroTitle))
+
+class WhatIsManim(Scene):
+    def construct(self):
+        manimTitle = Text('O que é o Manim?', font_size = 30).shift(UP * 3)
+        
+        manimDefinition = Text('Biblioteca python', font_size = 25).next_to(manimTitle, DOWN).shift(LEFT * 3.5, DOWN)
+        manimCreation = Text('· Criado como projeto pessoal de Grant Sanderson', font_size = 25).next_to(manimDefinition, DOWN).shift(RIGHT * 3)
+        manimObjective = Text('· Tem como objetivo criar animações matemáticas', font_size = 25).next_to(manimCreation, DOWN)
+        manimOSpecifics = Text('· Animações precisam ser precisas e explanativas', font_size = 25).next_to(manimObjective, DOWN)
+        
+        self.play(Write(manimTitle))
+        self.play(Write(manimDefinition))
+        self.play(Write(manimCreation))
+        self.play(Write(manimObjective))
+        self.play(Write(manimOSpecifics))
