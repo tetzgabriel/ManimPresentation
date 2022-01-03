@@ -47,3 +47,20 @@ class WhatIsManim(Scene):
         self.play(Write(manimCreation))
         self.play(Write(manimObjective))
         self.play(Write(manimOSpecifics))
+
+class ManimCreator(Scene):
+    def construct(self):
+        manimTitle = Text('Grant Sanderson', font_size = 30).shift(UP * 3)
+        
+        manimDefinition = Text('Graduado em Matemática pela Universidade de Stanford', font_size = 25).next_to(manimTitle, DOWN).shift(LEFT * 2.5, DOWN)
+        manimCreation = Text('Trabalhou na Khan Academy de 2015 a 2016', font_size = 25).next_to(manimDefinition, DOWN).shift(LEFT * 0.8)
+        manimObjective = Text('Fundou o canal 3Blue1Brown', font_size = 25).next_to(manimCreation, DOWN).shift(LEFT)
+        manimOSpecifics = Text('Criou o Manim como projeto pessoal', font_size = 25).next_to(manimObjective, DOWN).shift(RIGHT * 0.5)
+        threeBlue = Text('Acumulou 4 milhões de inscritos e utiliza o Manim em suas produções', font_size = 25).next_to(manimOSpecifics, DOWN).shift(RIGHT * 2.3)
+        
+        self.play(Write(manimTitle))
+        self.play(Write(manimDefinition))
+        self.play(Write(manimCreation))
+        self.play(Write(manimObjective))
+        self.play(Write(manimOSpecifics))
+        self.play(Write(threeBlue))
