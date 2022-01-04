@@ -1,4 +1,5 @@
 from manim import *
+
 class MainTitleScene(Scene):
     def construct(self):
         courseTitle = Text('Comunicação técnica e científica', font_size = 30).shift(RIGHT * 3, DOWN * 1.5)
@@ -79,6 +80,64 @@ class WhoManim(Scene):
         self.play(Write(manimCreation))
         self.play(Write(manimObjective))
         self.play(Write(manimOSpecifics))
+
+class ManimDiferentials(Scene):
+    def construct(self):
+        manimTitle = Text('Diferenciais do Manim', font_size = 30).shift(UP * 3)
+
+        vertices = (
+            (-2, 1, 0),
+            (-1, 2, 0),
+            (1, 2, 0),
+            (2, 1, 0),
+            (0, -2, 0)
+        )
+
+        mob = Dot(radius=2.0) 
+        mob.set_color_by_gradient([PINK, BLUE]).shift(LEFT * 2)
+
+        polygon = Polygon(*vertices).next_to(mob, RIGHT)
+
+        self.play(Write(manimTitle))
+        self.play(Write(mob))
+        self.play(Write(polygon))
+
+class ManimDiferentials2(Scene):
+    def construct(self):
+        manimTitle = Text('Diferenciais do Manim', font_size = 30).shift(UP * 3)
+
+        line1 = Line( ORIGIN, RIGHT ).shift(LEFT * 3)
+        line2 = Line( ORIGIN, UP ).shift(LEFT * 3)
+        mob = RightAngle(line1, line2, color=YELLOW, stroke_width=7)
+        
+        line3 = Line((LEFT+(1/3)*UP)*0.1, RIGHT+(1/3)*DOWN).shift(RIGHT * 3)
+        line4 = Line((DOWN+(1/3)*RIGHT)*0.1, UP+(1/3)*LEFT).shift(RIGHT * 3)
+        angle = Angle(line3, line4, radius=0.3)        
+
+        self.add(manimTitle)
+        self.play(Write(line1))
+        self.play(Write(line2))
+        self.play(Write(mob))
+
+        self.play(Write(line3))
+        self.play(Write(line4))
+        self.play(Write(angle))
+
+class ManimDiferentials3(Scene):
+    def construct(self):
+        manimTitle = Text('Diferenciais do Manim', font_size = 30).shift(UP * 3)
+
+        logo_green = '#87c2a5'
+        logo_blue = '#525893'
+        logo_red = '#e07a5f'
+        circle = Circle(color=logo_green, fill_opacity=1).shift(LEFT, DOWN)
+        square = Square(color=logo_blue, fill_opacity=1).shift(UP, DOWN)
+        triangle = Triangle(color=logo_red, fill_opacity=1).shift(RIGHT, DOWN)
+        logo = VGroup(triangle, square, circle).scale(1.3)
+              
+
+        self.add(manimTitle)
+        self.play(Write(logo))
 
 class Thanks(Scene):
     def construct(self):
