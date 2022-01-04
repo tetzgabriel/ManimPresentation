@@ -65,6 +65,21 @@ class ManimCreator(Scene):
         self.play(Write(manimOSpecifics))
         self.play(Write(threeBlue))
 
+class WhoManim(Scene):
+    def construct(self):
+        manimTitle = Text('Cenários de utilização', font_size = 30).shift(UP * 3)
+        
+        manimDefinition = Text('· Animações matemáticas', font_size = 25).next_to(manimTitle, DOWN).shift(LEFT * 2.5, DOWN)
+        manimCreation = Text('· Trabalhos precisos', font_size = 25).next_to(manimDefinition, DOWN).shift(LEFT * 0.4)
+        manimObjective = Text('· Desenhos explanativos', font_size = 25).next_to(manimCreation, DOWN).shift(RIGHT * 0.3)
+        manimOSpecifics = Text('· Aumentar engajamento do público', font_size = 25).next_to(manimObjective, DOWN).shift(RIGHT * 0.8)
+        
+        self.play(Write(manimTitle))
+        self.play(Write(manimDefinition))
+        self.play(Write(manimCreation))
+        self.play(Write(manimObjective))
+        self.play(Write(manimOSpecifics))
+
 class Thanks(Scene):
     def construct(self):
         thanks = Text('Obrigado!', font_size = 30)
