@@ -239,6 +239,21 @@ class ThreeDCameraIllusionRotation(ThreeDScene):
         self.wait(PI)
         self.stop_3dillusion_camera_rotation()
 
+class Production(Scene):
+    def construct(self):
+        groupTitle = Text('Produções com Manim', font_size = 30).shift(UP * 3)
+        
+        danteImage = ImageMobject("images/Video1.png").next_to(groupTitle, DOWN).shift(LEFT * 4.8, DOWN * 1.5)
+        tetzImage = ImageMobject("images/Video2.png").next_to(danteImage, RIGHT)
+        manarinImage = ImageMobject("images/Video3.png").next_to(tetzImage, RIGHT)
+        pedroImage = ImageMobject("images/Video4.png").next_to(manarinImage, RIGHT)
+
+        self.play(Write(groupTitle))
+
+        self.play(FadeIn(danteImage))
+        self.play(FadeIn(tetzImage))
+        self.play(FadeIn(manarinImage))
+        self.play(FadeIn(pedroImage))
 
 class Thanks(Scene):
     def construct(self):
