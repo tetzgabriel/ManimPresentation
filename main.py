@@ -3,10 +3,12 @@ from manim import *
 class MainTitleScene(Scene):
     def construct(self):
         courseTitle = Text('Comunicação técnica e científica', font_size = 30).shift(RIGHT * 3, DOWN * 1.5)
-        mainTitle = Text('Manim: da história até agora', font_size = 60).next_to(courseTitle, DOWN).shift(LEFT * 2)
+        mainTitle = Text('Uma introdução ao Manim', font_size = 60).next_to(courseTitle, DOWN).shift(LEFT * 1.7)
+        group = Text('Dante Escame, Gabriel Tetzlaf, Gustavo Manarin e Pedro Potenza', font_size = 20).next_to(mainTitle, DOWN).shift(RIGHT * 0.8)
         
         self.play(Write(courseTitle))
         self.play(Write(mainTitle))
+        self.play(Write(group))
 
 class GroupScene(Scene):
     def construct(self):
