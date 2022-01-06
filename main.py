@@ -15,7 +15,7 @@ class GroupScene(Scene):
         groupTitle = Text('Grupo', font_size = 30).shift(UP * 3)
         
         danteImage = ImageMobject("images/Dante.png").scale(0.3).next_to(groupTitle, DOWN).shift(LEFT * 4.5, DOWN * 1)
-        tetzImage = ImageMobject("images/Tetz2.png").scale(0.3).next_to(danteImage, RIGHT)
+        tetzImage = ImageMobject("images/Tetz3.png").scale(0.3).next_to(danteImage, RIGHT)
         manarinImage = ImageMobject("images/Manarin.png").scale(0.3).next_to(tetzImage, RIGHT)
         pedroImage = ImageMobject("images/Pedro.png").scale(0.3).next_to(manarinImage, RIGHT)
 
@@ -179,23 +179,23 @@ class BooleanOperations(Scene):
 
         i = Intersection(ellipse1, ellipse2, color=GREEN, fill_opacity=0.5)
         self.play(i.animate.scale(0.25).move_to(RIGHT * 5 + UP * 2.5))
-        intersection_text = Text("Intersection", font_size=23).next_to(i, UP)
+        intersection_text = Text("Intersecção", font_size=23).next_to(i, UP)
         self.play(FadeIn(intersection_text))
 
         u = Union(ellipse1, ellipse2, color=ORANGE, fill_opacity=0.5)
-        union_text = Text("Union", font_size=23)
+        union_text = Text("União", font_size=23)
         self.play(u.animate.scale(0.3).next_to(i, DOWN, buff=union_text.height * 3))
         union_text.next_to(u, UP)
         self.play(FadeIn(union_text))
 
         e = Exclusion(ellipse1, ellipse2, color=YELLOW, fill_opacity=0.5)
-        exclusion_text = Text("Exclusion", font_size=23)
+        exclusion_text = Text("Exclusão", font_size=23)
         self.play(e.animate.scale(0.3).next_to(u, DOWN, buff=exclusion_text.height * 3.5))
         exclusion_text.next_to(e, UP)
         self.play(FadeIn(exclusion_text))
 
         d = Difference(ellipse1, ellipse2, color=PINK, fill_opacity=0.5)
-        difference_text = Text("Difference", font_size=23)
+        difference_text = Text("Diferença", font_size=23)
         self.play(d.animate.scale(0.3).next_to(u, LEFT, buff=difference_text.height * 3.5))
         difference_text.next_to(d, UP)
         self.play(FadeIn(difference_text))
